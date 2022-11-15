@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #8ecae6;
+    height: 100vh;
+    width: 100%;
+}
+
+.calculator{
+    background-color: #023047;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+.screen{
+    margin: .5rem;
+    width: 420px;
+    height: 80px;
+    background-color: #02151f;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#display-operators, #display{
+    color: white;
+    font-weight: 600;
+    font-family: 'Lato', sans-serif;
+    text-align: right;
+    padding-right: 1rem;
+    font-size: 1.5rem;
+}
+
+#display-operators{
+    font-size: 1rem;
+}
+
+.grid>div{
+    color: white;
+    padding: 20px 40px;
+    background-color: #02151f;
+    border: 2px solid #023047;
+    font-family: 'Lato', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .3s;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+.grid>div:hover{
+    background-color: #157086;
+}
+
+.grid{
+    height: 420px;
+    width: 420px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    "clear clear-one divide multiply"
+    "seven eight nine subtract"
+    "four five six add"
+    "one two three equals"
+    "zero zero decimal equals"
+    ;
+}
+
+#clear, #clear-one{
+    background-color: #fb8500;
+}
+
+#zero{
+    grid-area: zero;
+}
+
+#equals{
+    grid-area: equals;
+    background-color: #219ebc;
+}
